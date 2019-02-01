@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeavyProblemsGenerator", "HeavyProblemsGenerator\HeavyProblemsGenerator.csproj", "{55CAC1E8-56C4-4350-B0A6-230B61C5CA08}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "HeavyProblemsInstaller", "HeavyProblemsInstaller\HeavyProblemsInstaller.vdproj", "{31CCBD75-694C-438B-A5F8-C7E723E89272}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{55CAC1E8-56C4-4350-B0A6-230B61C5CA08}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55CAC1E8-56C4-4350-B0A6-230B61C5CA08}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{55CAC1E8-56C4-4350-B0A6-230B61C5CA08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31CCBD75-694C-438B-A5F8-C7E723E89272}.Debug|Any CPU.ActiveCfg = Debug
+		{31CCBD75-694C-438B-A5F8-C7E723E89272}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
