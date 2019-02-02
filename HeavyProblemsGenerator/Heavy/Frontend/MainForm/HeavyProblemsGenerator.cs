@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -26,7 +27,7 @@ namespace HeavyProblemsGenerator.Heavy.Frontend.MainForm
             SaveFileDialog saveDialog = new SaveFileDialog
             {
                 AddExtension = true,
-                DefaultExt = "hvy"
+                DefaultExt = "prblm"
             };
 
             if (saveDialog.ShowDialog() == DialogResult.OK)
@@ -70,7 +71,10 @@ namespace HeavyProblemsGenerator.Heavy.Frontend.MainForm
 
         public void UpdateFromObservable(int o)
         {
+
             progress.Value = o;
+            Console.WriteLine("Status: " + o);
+            //Thread.Sleep(1);
         }
 
         [STAThread]
