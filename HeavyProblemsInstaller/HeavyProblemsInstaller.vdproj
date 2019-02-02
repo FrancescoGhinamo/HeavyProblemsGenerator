@@ -43,6 +43,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -59,6 +75,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -198,7 +222,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:HeavyProblemsGenerator"
         "ProductCode" = "8:{C083D870-1DB7-462A-82C4-C9801A1364B5}"
-        "PackageCode" = "8:{70D554D4-284B-42D8-A6CA-B45475E9EDB4}"
+        "PackageCode" = "8:{04BB8F7D-F6EA-492D-9C7C-B34949D6D036}"
         "UpgradeCode" = "8:{539B8936-12C7-4A7C-B4FC-0AC8A6846F57}"
         "AspNetVersion" = "8:"
         "RestartWWWService" = "11:FALSE"
