@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HeavyProblemsGenerator.Heavy.Backend.Bean;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -9,7 +10,11 @@ namespace HeavyProblemsGenerator.Heavy.Backend.Service
 {
     public class ByteFileServiceImpl : IByteFileService
     {
-        internal ByteFileServiceImpl() { }
+        private readonly IObserver Obs;
+        internal ByteFileServiceImpl(IObserver obs)
+        {
+            Obs = obs;
+        }
 
         public void WriteBytes(string path, long n)
         {
@@ -20,6 +25,8 @@ namespace HeavyProblemsGenerator.Heavy.Backend.Service
                 for (int i = 0; i < n; i++)
                 {
                     write.WriteByte(1);
+                    write.Flush();
+                    Obs.UpdateFromObservable((int) ((i + 1) * 100 / n));
                 }
             }
             catch (Exception) { }
@@ -27,7 +34,7 @@ namespace HeavyProblemsGenerator.Heavy.Backend.Service
             {
                 if(write != null)
                 {
-                    write.Flush();
+                    
                     write.Close();
                 }
             }

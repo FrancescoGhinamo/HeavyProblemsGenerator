@@ -35,6 +35,7 @@
             this.txtSize = new System.Windows.Forms.TextBox();
             this.btnCreate = new System.Windows.Forms.Button();
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.progress = new System.Windows.Forms.ProgressBar();
             this.menuBar.SuspendLayout();
             this.pnlMain.SuspendLayout();
             this.SuspendLayout();
@@ -61,7 +62,7 @@
             // itemDestination
             // 
             this.itemDestination.Name = "itemDestination";
-            this.itemDestination.Size = new System.Drawing.Size(216, 26);
+            this.itemDestination.Size = new System.Drawing.Size(211, 26);
             this.itemDestination.Text = "Choose destination";
             this.itemDestination.Click += new System.EventHandler(this.itemDestination_Click);
             // 
@@ -99,6 +100,7 @@
             // 
             // pnlMain
             // 
+            this.pnlMain.Controls.Add(this.progress);
             this.pnlMain.Controls.Add(this.btnCreate);
             this.pnlMain.Controls.Add(this.txtSize);
             this.pnlMain.Controls.Add(this.lblSize);
@@ -107,6 +109,13 @@
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(648, 246);
             this.pnlMain.TabIndex = 4;
+            // 
+            // progress
+            // 
+            this.progress.Location = new System.Drawing.Point(24, 89);
+            this.progress.Name = "progress";
+            this.progress.Size = new System.Drawing.Size(453, 47);
+            this.progress.TabIndex = 4;
             // 
             // HeavyProblemsGenerator
             // 
@@ -136,5 +145,6 @@
         private System.Windows.Forms.TextBox txtSize;
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.Panel pnlMain;
+        private System.Windows.Forms.ProgressBar progress;
     }
 }

@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Heavy\Backend\Bean\HeavyFile.cs" />
+    <Compile Include="Heavy\Backend\Bean\Observable.cs" />
+    <Compile Include="Heavy\Backend\Bean\Observer.cs" />
     <Compile Include="Heavy\Backend\Service\ByteFileFactory.cs" />
     <Compile Include="Heavy\Backend\Service\ByteFileServiceImpl.cs" />
     <Compile Include="Heavy\Backend\Service\IByteFileService.cs" />

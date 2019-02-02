@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace HeavyProblemsGenerator.Heavy.Frontend.MainForm
 {
-    public partial class HeavyProblemsGenerator : Form
+    public partial class HeavyProblemsGenerator : Form, IObserver
     {
 
         private HeavyFile file;
@@ -31,7 +31,7 @@ namespace HeavyProblemsGenerator.Heavy.Frontend.MainForm
 
             if (saveDialog.ShowDialog() == DialogResult.OK)
             {
-                file = new HeavyFile(saveDialog.FileName);
+                file = new HeavyFile(saveDialog.FileName, this);
                 txtSize.Enabled = true;
                 Console.WriteLine("Selected file: " + file.Path);
             }
@@ -39,7 +39,7 @@ namespace HeavyProblemsGenerator.Heavy.Frontend.MainForm
 
         private void txtSize_TextChanged(object sender, EventArgs e)
         {
-            if(!txtSize.Text.Equals(""))
+            if (!txtSize.Text.Equals(""))
             {
                 btnCreate.Enabled = true;
             }
@@ -54,17 +54,23 @@ namespace HeavyProblemsGenerator.Heavy.Frontend.MainForm
             long size = long.Parse(txtSize.Text);
             file.Size = size;
             DialogResult confirmResult = MessageBox.Show(this, "Create file with these features?\n\nSize: " + file.Size + "\nSize on disk: " + file.SizeOnDisk + "\nSectors: " + file.Sectors, "Confirm creation", MessageBoxButtons.YesNo);
-            if(confirmResult == DialogResult.Yes)
+            if (confirmResult == DialogResult.Yes)
             {
                 Console.WriteLine("\nCreating file...");
                 file.CreateFile();
                 Console.WriteLine("\n\nCreated file: " + file.Path);
-                Console.WriteLine("Size: " + file.Size + "\nSize on disk: " + file.SizeOnDisk + "\nSectors: " + file.Sectors+"\n\n");
+                Console.WriteLine("Size: " + file.Size + "\nSize on disk: " + file.SizeOnDisk + "\nSectors: " + file.Sectors + "\n\n");
             }
             file = null;
             txtSize.Text = "";
             txtSize.Enabled = false;
             btnCreate.Enabled = false;
+            progress.Value = 0;
+        }
+
+        public void UpdateFromObservable(int o)
+        {
+            progress.Value = o;
         }
 
         [STAThread]
@@ -74,5 +80,7 @@ namespace HeavyProblemsGenerator.Heavy.Frontend.MainForm
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new HeavyProblemsGenerator());
         }
+
+        
     }
 }

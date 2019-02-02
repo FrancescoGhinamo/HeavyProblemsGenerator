@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HeavyProblemsGenerator.Heavy.Backend.Bean
 {
-    public class HeavyFile
+    public class HeavyFile : Observable
     {
         public readonly string Path;
 
@@ -31,7 +31,7 @@ namespace HeavyProblemsGenerator.Heavy.Backend.Bean
         }
     
 
-        public HeavyFile(string path)
+        public HeavyFile(string path, IObserver observer) : base(observer)
         {
             this.Path = path;
         }
@@ -39,7 +39,7 @@ namespace HeavyProblemsGenerator.Heavy.Backend.Bean
 
         public void CreateFile()
         {
-            IByteFileService s = ByteFileFactory.GetByteFileService();
+            IByteFileService s = ByteFileFactory.GetByteFileService(base.obs);
             s.WriteBytes(Path, Size);
         }
 
